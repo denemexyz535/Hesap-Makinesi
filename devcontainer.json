@@ -1,0 +1,21 @@
+{  // Store in ".devcontainer/devcontainer.json"; use the "Preview in Editor" button in the ports control to view; password is "vscode"
+  "name": "Python/Java Development with VNC Desktop",
+  "image": "mcr.microsoft.com/devcontainers/python:3.9",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y python3-tk xvfb x11vnc",
+  "features": {
+    "ghcr.io/devcontainers/features/desktop-lite:1": {},
+    "ghcr.io/devcontainers/features/java:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python", "vscjava.vscode-java-pack"]
+    }
+  },
+  "forwardPorts": [6080],
+  "portsAttributes": {
+    "6080": {
+      "label": "desktop"
+    }
+  },
+  "remoteUser": "vscode"
+}
